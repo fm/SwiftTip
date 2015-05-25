@@ -45,16 +45,22 @@ class ViewController: UIViewController {
         var guestNumber: Float = 1 //set number of guests to 1 for default
         
         //set number of guests according to segment control postion
-        if guestIndex == 0 {
+        
+        switch guestIndex {
+            
+        case 0:
             guestNumber = 1
-        } else if guestIndex == 1 {
-            guestNumber = 2
-        } else if guestIndex == 2 {
-            guestNumber = 3
-        } else if guestIndex == 3 {
-            guestNumber = 4
-        } else {
-            guestNumber = 5
+        case 1:
+                guestNumber = 2
+        case 2:
+                guestNumber = 3
+        case 3:
+                guestNumber = 4
+        case 4:
+                guestNumber = 5
+        default:
+            break
+        
         }
         
     // println(guestNumber) // make sure it selects right number of guests
@@ -63,8 +69,6 @@ class ViewController: UIViewController {
         eachPaysLabel.text = "Each Guest Pays: $\(guestTotal)"
         
     }
-    
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()

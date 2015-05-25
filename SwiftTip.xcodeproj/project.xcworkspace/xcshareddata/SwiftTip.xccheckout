@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>8716A482-AAF2-49F2-A567-139D70EF823D</string>
+	<key>IDESourceControlProjectName</key>
+	<string>SwiftTip</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>7312EED1ADF527B57395925917FA0B8A478EBEE4</key>
+		<string>https://github.com/fm/SwiftTip.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>SwiftTip.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>7312EED1ADF527B57395925917FA0B8A478EBEE4</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/fm/SwiftTip.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>7312EED1ADF527B57395925917FA0B8A478EBEE4</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>7312EED1ADF527B57395925917FA0B8A478EBEE4</string>
+			<key>IDESourceControlWCCName</key>
+			<string>SwiftTip</string>
+		</dict>
+	</array>
+</dict>
+</plist>
