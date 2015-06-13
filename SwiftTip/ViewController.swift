@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var tipLabel: UILabel!
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var eachPaysLabel: UILabel!
+    @IBOutlet weak var calculateButton: UIButton!
     
     @IBAction func calculateTapped(sender: AnyObject) {
         // This code is run each time the Calculate Button is tapped
@@ -49,7 +50,7 @@ class ViewController: UIViewController {
         switch guestIndex {
             
         case 0:
-            guestNumber = 1
+                guestNumber = 1
         case 1:
                 guestNumber = 2
         case 2:
@@ -73,6 +74,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        //calculate button border
+        self.calculateButton.layer.cornerRadius = 7
+        self.calculateButton.layer.masksToBounds = true
+        self.calculateButton.layer.borderWidth = 1
+        self.calculateButton.layer.borderColor = UIColor.blueColor().CGColor
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
