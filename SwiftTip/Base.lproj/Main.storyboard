@@ -42,10 +42,10 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Total Bill $" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fYl-QW-SKI">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Total Bill $" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="fYl-QW-SKI">
                                 <rect key="frame" x="16" y="107" width="568" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done"/>
+                                <textInputTraits key="textInputTraits" spellCheckingType="no" keyboardType="decimalPad" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Amount: $0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P7R-VJ-11v">
                                 <rect key="frame" x="16" y="519" width="568" height="21"/>
@@ -91,6 +91,9 @@
                                     <segment title="4"/>
                                     <segment title="5"/>
                                 </segments>
+                                <connections>
+                                    <action selector="guestTapped:" destination="vXZ-lx-hvc" eventType="valueChanged" id="3gs-DU-F7r"/>
+                                </connections>
                             </segmentedControl>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="386-fd-Srr">
                                 <rect key="frame" x="16" y="299" width="568" height="29"/>
@@ -222,22 +225,22 @@
                                 <exclude reference="Oie-3X-EwE"/>
                                 <exclude reference="gXg-Cg-FJr"/>
                                 <exclude reference="pV3-Uj-Bw3"/>
+                                <exclude reference="t8z-Fb-WRO"/>
+                                <exclude reference="Mje-PB-VXu"/>
+                                <exclude reference="cD1-AB-hmp"/>
+                                <exclude reference="e0y-E9-JKN"/>
+                                <exclude reference="qAK-vN-mYI"/>
+                                <exclude reference="xeQ-ij-J6W"/>
                                 <exclude reference="AHw-Na-l04"/>
                                 <exclude reference="bba-Ym-DBg"/>
                                 <exclude reference="kPe-7d-ziX"/>
                                 <exclude reference="Mzo-hO-c9E"/>
                                 <exclude reference="fD5-tJ-KaY"/>
                                 <exclude reference="u4o-MS-i4t"/>
-                                <exclude reference="t8z-Fb-WRO"/>
                                 <exclude reference="3TO-iO-0nG"/>
                                 <exclude reference="Zmc-IZ-PvH"/>
                                 <exclude reference="aek-8b-zus"/>
                                 <exclude reference="ZAf-5c-VvK"/>
-                                <exclude reference="Mje-PB-VXu"/>
-                                <exclude reference="cD1-AB-hmp"/>
-                                <exclude reference="e0y-E9-JKN"/>
-                                <exclude reference="qAK-vN-mYI"/>
-                                <exclude reference="xeQ-ij-J6W"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact">
@@ -262,6 +265,10 @@
                                 <include reference="pV3-Uj-Bw3"/>
                                 <exclude reference="umo-2F-p3J"/>
                                 <exclude reference="xdH-ZS-bxL"/>
+                                <exclude reference="ExK-t0-Huc"/>
+                                <include reference="t8z-Fb-WRO"/>
+                                <include reference="qAK-vN-mYI"/>
+                                <include reference="xeQ-ij-J6W"/>
                                 <exclude reference="5T4-fq-6BD"/>
                                 <exclude reference="7fp-NI-xJT"/>
                                 <include reference="AHw-Na-l04"/>
@@ -276,8 +283,6 @@
                                 <include reference="fD5-tJ-KaY"/>
                                 <exclude reference="gRn-R4-H7T"/>
                                 <include reference="u4o-MS-i4t"/>
-                                <exclude reference="ExK-t0-Huc"/>
-                                <include reference="t8z-Fb-WRO"/>
                                 <include reference="3TO-iO-0nG"/>
                                 <include reference="Zmc-IZ-PvH"/>
                                 <include reference="aek-8b-zus"/>
@@ -285,18 +290,16 @@
                                 <exclude reference="xbN-jQ-4NN"/>
                                 <exclude reference="z1n-OW-TkO"/>
                                 <include reference="ZAf-5c-VvK"/>
-                                <include reference="qAK-vN-mYI"/>
-                                <include reference="xeQ-ij-J6W"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact-widthClass=regular">
                             <mask key="constraints">
-                                <exclude reference="aek-8b-zus"/>
                                 <include reference="Mje-PB-VXu"/>
                                 <include reference="cD1-AB-hmp"/>
                                 <include reference="e0y-E9-JKN"/>
                                 <exclude reference="qAK-vN-mYI"/>
                                 <exclude reference="xeQ-ij-J6W"/>
+                                <exclude reference="aek-8b-zus"/>
                             </mask>
                         </variation>
                     </view>

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var billTextField: UITextField!
     @IBOutlet weak var numberOfGuestsSegmentedControl: UISegmentedControl!
     @IBOutlet weak var tipRateSegmentedControl: UISegmentedControl!
@@ -16,6 +16,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var eachPaysLabel: UILabel!
     @IBOutlet weak var calculateButton: UIButton!
+    @IBAction func guestTapped(sender: AnyObject) {
+        // hides keyboard when numberOfGuestsSegmentedControl is tapped
+        billTextField.resignFirstResponder()
     
     @IBAction func calculateTapped(sender: AnyObject) {
         // This code is run each time the Calculate Button is tapped
@@ -26,7 +29,6 @@ class ViewController: UIViewController {
         var index: Int = tipRateSegmentedControl.selectedSegmentIndex
         var tipRate: Float = 0.15 // set tip rate to first index
         
-        //set tip rates according to segment control postion
         if index == 0 {
             tipRate = 0.15
         } else if index == 1 {
@@ -43,30 +45,21 @@ class ViewController: UIViewController {
         totalLabel.text = "Total Amount: $\(total)"
         
         var guestIndex: Int = numberOfGuestsSegmentedControl.selectedSegmentIndex
-        var guestNumber: Float = 1 //set number of guests to 1 for default
         
-        //set number of guests according to segment control postion
         
         switch guestIndex {
             
         case 0:
-                guestNumber = 1
         case 1:
-                guestNumber = 2
         case 2:
-                guestNumber = 3
         case 3:
-                guestNumber = 4
         case 4:
-                guestNumber = 5
         default:
             break
         
         }
         
-    // println(guestNumber) // make sure it selects right number of guests
         
-        var guestTotal: Float = total / guestNumber // divide bill by # of guests
         eachPaysLabel.text = "Each Guest Pays: $\(guestTotal)"
         
     }
@@ -75,7 +68,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        //calculate button border
         self.calculateButton.layer.cornerRadius = 7
         self.calculateButton.layer.masksToBounds = true
         self.calculateButton.layer.borderWidth = 1
@@ -88,7 +80,6 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
 
 }
 
