@@ -19,6 +19,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBAction func guestTapped(sender: AnyObject) {
         // hides keyboard when numberOfGuestsSegmentedControl is tapped
         billTextField.resignFirstResponder()
+        }
     
     @IBAction func calculateTapped(sender: AnyObject) {
         // This code is run each time the Calculate Button is tapped
@@ -29,6 +30,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         var index: Int = tipRateSegmentedControl.selectedSegmentIndex
         var tipRate: Float = 0.15 // set tip rate to first index
         
+        // set tip rates according to segment control postion
         if index == 0 {
             tipRate = 0.15
         } else if index == 1 {
@@ -45,21 +47,30 @@ class ViewController: UIViewController, UITextFieldDelegate {
         totalLabel.text = "Total Amount: $\(total)"
         
         var guestIndex: Int = numberOfGuestsSegmentedControl.selectedSegmentIndex
+        var guestNumber: Int = 1 // set number of guests to 1 for default
         
+        // set number of guests according to segment control postion
         
         switch guestIndex {
             
         case 0:
+                guestNumber = guestIndex + 1
         case 1:
+                guestNumber = guestIndex + 1
         case 2:
+                guestNumber = guestIndex + 1
         case 3:
+                guestNumber = guestIndex + 1
         case 4:
+                guestNumber = guestIndex + 1
         default:
             break
         
         }
         
+         // println(guestNumber) // make sure it selects right number of guests
         
+        var guestTotal: Float = total / Float(guestNumber) // divide bill by # of guests
         eachPaysLabel.text = "Each Guest Pays: $\(guestTotal)"
         
     }
@@ -68,6 +79,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        self.billTextField.delegate = self
+
+        // calculate button border
         self.calculateButton.layer.cornerRadius = 7
         self.calculateButton.layer.masksToBounds = true
         self.calculateButton.layer.borderWidth = 1
