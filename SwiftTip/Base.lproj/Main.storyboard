@@ -90,6 +90,7 @@
                                     <segment title="3"/>
                                     <segment title="4"/>
                                     <segment title="5"/>
+                                    <segment title="6"/>
                                 </segments>
                                 <connections>
                                     <action selector="guestTapped:" destination="vXZ-lx-hvc" eventType="valueChanged" id="3gs-DU-F7r"/>
@@ -98,6 +99,7 @@
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="386-fd-Srr">
                                 <rect key="frame" x="16" y="299" width="568" height="29"/>
                                 <segments>
+                                    <segment title="No Tip"/>
                                     <segment title="15%"/>
                                     <segment title="18%"/>
                                     <segment title="20%"/>

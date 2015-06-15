@@ -28,12 +28,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
         var totalBill: Float = userInput.floatValue //Convert String to Float
         
         var index: Int = tipRateSegmentedControl.selectedSegmentIndex
-        var tipRate: Float = 0.15 // set tip rate to first index
+        var tipRate: Float = 0.00 // set tip rate to first index
         
         // set tip rates according to segment control postion
         if index == 0 {
-            tipRate = 0.15
+            tipRate = 0.00
         } else if index == 1 {
+            tipRate = 0.15
+        } else if index == 2 {
             tipRate = 0.18
         } else {
             tipRate = 0.20
@@ -63,12 +65,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 guestNumber = guestIndex + 1
         case 4:
                 guestNumber = guestIndex + 1
+        case 5:
+                guestNumber = guestIndex + 1
         default:
             break
         
         }
         
-         // println(guestNumber) // make sure it selects right number of guests
+        // Debugging
+        // println(tipRate) // make sure it selects the right tip amount
+        // println(guestNumber) // make sure it selects right number of guests
         
         var guestTotal: Float = total / Float(guestNumber) // divide bill by # of guests
         eachPaysLabel.text = "Each Guest Pays: $\(guestTotal)"
