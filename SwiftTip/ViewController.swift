@@ -16,10 +16,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var eachPaysLabel: UILabel!
     @IBOutlet weak var calculateButton: UIButton!
-    @IBAction func guestTapped(sender: AnyObject) {
-        // hides keyboard when numberOfGuestsSegmentedControl is tapped
-        billTextField.resignFirstResponder()
-        }
     
     @IBAction func calculateTapped(sender: AnyObject) {
         // This code is run each time the Calculate Button is tapped
@@ -93,12 +89,20 @@ class ViewController: UIViewController, UITextFieldDelegate {
         self.calculateButton.layer.borderWidth = 1
         self.calculateButton.layer.borderColor = UIColor.blueColor().CGColor
         
-        
     }
-
+    
+    
+    @IBAction func guestTap(sender: AnyObject) {
+        self.view.endEditing(true)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        self.view.endEditing(true)
     }
 
 }
