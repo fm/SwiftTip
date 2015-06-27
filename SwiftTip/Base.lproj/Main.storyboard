@@ -119,6 +119,9 @@
                                     <segment title="18%"/>
                                     <segment title="20%"/>
                                 </segments>
+                                <connections>
+                                    <action selector="tipTapped:" destination="vXZ-lx-hvc" eventType="valueChanged" id="oyW-Ay-my6"/>
+                                </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of guests" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zC8-OY-LYZ">
                                 <rect key="frame" x="231" y="193" width="138" height="21"/>
@@ -204,7 +207,6 @@
                                 <textInputTraits key="textInputTraits" spellCheckingType="no" keyboardType="decimalPad" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="nJX-SI-iHf" firstAttribute="top" secondItem="386-fd-Srr" secondAttribute="bottom" constant="29" id="1aZ-7O-dUe"/>
                             <constraint firstItem="P7R-VJ-11v" firstAttribute="top" secondItem="nJX-SI-iHf" secondAttribute="bottom" constant="18" id="1iW-B1-FnQ"/>

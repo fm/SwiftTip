@@ -9,6 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController, UITextFieldDelegate {
+    
     @IBOutlet weak var billTextField: UITextField!
     @IBOutlet weak var numberOfGuestsSegmentedControl: UISegmentedControl!
     @IBOutlet weak var tipRateSegmentedControl: UISegmentedControl!
@@ -19,6 +20,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func calculateTapped(sender: AnyObject) {
         // This code is run each time the Calculate Button is tapped
+        
         
         var userInput = billTextField.text as NSString // Get Bill
         var totalBill: Double = floor(userInput.doubleValue) // Convert String to Float
@@ -76,7 +78,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         // println(tipRate) // make sure it selects the right tip amount
         // println(guestNumber) // make sure it selects right number of guests
         
-        var guestTotal: Double = total / Double(guestNumber) // divide bill by # of guests
+        var guestTotal: Double = roundedTotal / Double(guestNumber) // divide bill by # of guests
         eachPaysLabel.text = NSString(format: "Each Guest Pays: $%.2f", guestTotal) as String // Limiting to 2 decimals
     }
 
@@ -91,11 +93,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
         self.calculateButton.layer.masksToBounds = true
         self.calculateButton.layer.borderWidth = 1
         self.calculateButton.layer.borderColor = UIColor.blueColor().CGColor
-        
-    }
+          }
     
     
     @IBAction func guestTap(sender: AnyObject) {
+        self.view.endEditing(true)
+    }
+    
+    @IBAction func tipTapped(sender: AnyObject) {
         self.view.endEditing(true)
     }
     
