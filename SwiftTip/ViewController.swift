@@ -20,11 +20,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBAction func calculateTapped(sender: AnyObject) {
         // This code is run each time the Calculate Button is tapped
         
-        var userInput = billTextField.text as NSString //Get Bill
-        var totalBill: Float = userInput.floatValue //Convert String to Float
+        var userInput = billTextField.text as NSString // Get Bill
+        var totalBill: Double = floor(userInput.doubleValue) // Convert String to Float
         
         var index: Int = tipRateSegmentedControl.selectedSegmentIndex
-        var tipRate: Float = 0.00 // set tip rate to first index
+        var tipRate: Double = 0.00 // set tip rate to first index
         
         // set tip rates according to segment control postion
         if index == 0 {
@@ -38,11 +38,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
         
         
-        var tip: Float = totalBill * tipRate // calculate the tip
-        tipLabel.text = "Tip Amount: $\(tip)"
+        var tip: Double = totalBill * tipRate // calculate the tip
+        let roundedTip = Double(round(100*tip)/100) // rounding the tip
+        tipLabel.text = NSString(format: "Tip Amount: $%.2f", roundedTip) as String // Limiting to 2 decimals
         
-        var total: Float = totalBill + tip // add tip to total
-        totalLabel.text = "Total Amount: $\(total)"
+        var total: Double = totalBill + roundedTip // add tip to total
+        var roundedTotal = Double(round(100*total)/100) //rounding the total
+        totalLabel.text = NSString(format: "Total Amount: $%.2f", roundedTotal) as String // Limiting to 2 decimals
+        
         
         var guestIndex: Int = numberOfGuestsSegmentedControl.selectedSegmentIndex
         var guestNumber: Int = 1 // set number of guests to 1 for default
@@ -67,14 +70,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
             break
         
         }
+
         
         // Debugging
         // println(tipRate) // make sure it selects the right tip amount
         // println(guestNumber) // make sure it selects right number of guests
         
-        var guestTotal: Float = total / Float(guestNumber) // divide bill by # of guests
-        eachPaysLabel.text = "Each Guest Pays: $\(guestTotal)"
-        
+        var guestTotal: Double = total / Double(guestNumber) // divide bill by # of guests
+        eachPaysLabel.text = NSString(format: "Each Guest Pays: $%.2f", guestTotal) as String // Limiting to 2 decimals
     }
 
     override func viewDidLoad() {
@@ -106,4 +109,3 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
 
 }
-
