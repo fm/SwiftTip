@@ -16,9 +16,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var tipLabel: UILabel!
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var eachPaysLabel: UILabel!
-    @IBOutlet weak var calculateButton: UIButton!
     
-    @IBAction func calculateTapped(sender: AnyObject) {
+    func calculateTip() {
         // This code is run each time the Calculate Button is tapped
         
         
@@ -89,19 +88,21 @@ class ViewController: UIViewController, UITextFieldDelegate {
         self.billTextField.delegate = self
 
         // calculate button border
-        self.calculateButton.layer.cornerRadius = 7
-        self.calculateButton.layer.masksToBounds = true
-        self.calculateButton.layer.borderWidth = 1
-        self.calculateButton.layer.borderColor = UIColor.blueColor().CGColor
           }
     
     
     @IBAction func guestTap(sender: AnyObject) {
         self.view.endEditing(true)
+        calculateTip()
     }
     
     @IBAction func tipTapped(sender: AnyObject) {
         self.view.endEditing(true)
+        calculateTip()
+    }
+    
+    @IBAction func totalBillChanged(sender: AnyObject) {
+        calculateTip()
     }
     
     override func didReceiveMemoryWarning() {
